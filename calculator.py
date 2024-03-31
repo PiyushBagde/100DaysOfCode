@@ -29,28 +29,34 @@ def doCalculation(num1, num2, operation):
   else:
     return "Enter appropriate option"
 
-num1 = float(input("What's your first number : "))
+
+def calculator():
+  num1 = float(input("What's your first number : "))
+  go_ahead = 'y'
+  
+  while go_ahead == 'y':
+    print('''
+    +
+    -
+    /
+    *
+    ''')
+  
+    operation = input('Choose one of the operation from above : ')
+  
+    num2 = float(input("What's your second number : "))
+  
+    answer = doCalculation(num1, num2, operation)
+  
+    print(f'{num1} {operation} {num2} = {answer}')
+  
+    if input(f"typev 'y' to continue with {answer} and 'n' to start new calculator ") == 'y':
+      num1 = answer
+    else:
+      go_ahead = "n"
+      print(logo)
+      calculator()
+
+calculator()
     
-go_ahead = 'yes'
-while go_ahead == 'yes':
-  print('''
-  +
-  -
-  /
-  *
-  ''')
-
-  operation = input('Choose one of the operation from above : ')
-
-  num2 = float(input("What's your second number : "))
-
-  answer = doCalculation(num1, num2, operation)
-
-  print(f'{num1} {operation} {num2} = {answer}')
-
-  if input(f'Do you wanna play with the {answer}, say "yes" or "no" : ') == 'yes':
-    num1 = answer
-  else:
-    go_ahead = "no"
-  
-  
+    
