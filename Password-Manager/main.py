@@ -63,6 +63,24 @@ def add_entry():
                 password_entry.delete(0, END)
 
 
+# ---------------------------- SEARCH PASSWORD ------------------------------- #
+
+def search():
+    website = website_entry.get()
+    try:
+        with open("data.json", mode="r") as data_file:
+            data = json.load(data_file)
+    except FileNotFoundError:
+        messagebox.showinfo(title='error', message="No Data File Found")
+    else:
+        if website in data:
+            found = True
+            messagebox.showinfo(title=f"{website}",
+                                message=f"Email: {data[website]['email']}\nPassword: {data[website]['password']}")
+        else:
+            messagebox.showinfo(title='error', message='No details for this website exists.')
+
+
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
@@ -82,19 +100,22 @@ password_label.grid(row=3, column=0)
 email_label = Label(text='Email/Username:')
 email_label.grid(row=2, column=0)
 
-website_entry = Entry(width=35)
-website_entry.grid(row=1, column=1, columnspan=2)
+website_entry = Entry(width=24)
+website_entry.grid(row=1, column=1)
 website_entry.focus()
-email_entry = Entry(width=35)
+email_entry = Entry(width=40)
 email_entry.insert(END, 'iamnotspare@gmail.com')
 email_entry.grid(row=2, column=1, columnspan=2)
-password_entry = Entry(width=21)
+password_entry = Entry(width=24)
 password_entry.grid(row=3, column=1)
 
-generate_password_button = Button(text='Generate Password', command=generate_random_password, bg='#8E8FFA')
+generate_password_button = Button(text='Generate Password', width=15, command=generate_random_password, bg='#8E8FFA')
 generate_password_button.grid(row=3, column=2)
 
-add_button = Button(text='Add', width=36, command=add_entry, bg='#1D24CA', fg='white')
+add_button = Button(text='Add', width=40, command=add_entry, bg='#C73659', fg='white')
 add_button.grid(row=4, column=1, columnspan=2)
+
+search_button = Button(text='Search', width=15, command=search, bg="#5AB2FF")
+search_button.grid(row=1, column=2)
 
 window.mainloop()
