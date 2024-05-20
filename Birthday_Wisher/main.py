@@ -5,8 +5,8 @@ import smtplib
 import pandas as pd
 
 PLACEHOLDER = "[NAME]"
-MY_EMAIL = "can.youkai143@gmail.com"
-PASSWORD = "usjuempnkwclhkiu"
+MY_EMAIL = "your.email@gmail.com"
+PASSWORD = "yourPassword"
 
 # 1. Update the birthdays.csv
 # Done
