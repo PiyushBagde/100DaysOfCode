@@ -5,4 +5,4 @@ It utilizes [Stock data API](https://www.alphavantage.co/) & [financial news API
 
 PS: use [BotFataher](https://t.me/BotFather), [get chat id here](https://t.me/get_id_bot)
 
-![image](https://github.com/PiyushBagde/100-days-of-python/assets/100503136/272e97f4-bc9b-4aea-a040-f8ce2041baf1)
+<img src="https://github.com/PiyushBagde/100-days-of-python/assets/100503136/272e97f4-bc9b-4aea-a040-f8ce2041baf1" width="400">
