@@ -1,4 +1,4 @@
-## **HABIT Tracler: let's make it thinng of everyday! 📅**
+## **HABIT Tracker: let's make it thinng of everyday! 📅**
 
  It leverages the [Pixela API](https://pixe.la/), a fun and visual way to track your progress. By combining the power of habit tracking with Pixela's engaging interface, you'll stay motivated and accountable on your path to self-improvement.
 
