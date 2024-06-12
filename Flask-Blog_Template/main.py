@@ -1,14 +1,11 @@
 import requests
 from flask import Flask, render_template
-import os
 
 from post import Post
 
 app = Flask(__name__)
 
-post_endpoint = os.getenv('POSTS')
-
-posts = requests.get(post_endpoint).json()
+response = requests.get('https://api.npoint.io/c790b4d5cab58020d391').json()
 
 post_obj = []
 for post in response:
